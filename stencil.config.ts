@@ -8,6 +8,6 @@ export const config: Config = {
   taskQueue: 'async',
   outputTargets: [{
     type: 'www',
-    serviceWorker: null
+    serviceWorker: null,
   }],
 };

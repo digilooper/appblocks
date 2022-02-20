@@ -44,9 +44,6 @@ export class CoreList implements ComponentInterface {
   
       this.el.appendChild(list);
 
-
-      console.log(ul);
-
   }
 
   scrollToID(id) {

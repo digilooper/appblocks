@@ -1,3 +1,7 @@
-:host {
-  display: block;
+core-butoon {
+  display: inline-block;
+}
+
+core-button .wp-block-button {
+  display: inline;
 }

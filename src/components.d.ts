@@ -10,6 +10,12 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface AppSinglePost {
+        "slug": string;
+    }
+    interface CoreArchives {
+        "data": any;
+    }
     interface CoreAudio {
         "data": any;
     }
@@ -17,6 +23,7 @@ export namespace Components {
         "data": any;
     }
     interface CoreButtons {
+        "data": any;
     }
     interface CoreCategories {
         "data": any;
@@ -55,6 +62,9 @@ export namespace Components {
         "data": any;
     }
     interface CoreList {
+        "data": any;
+    }
+    interface CoreMediaText {
         "data": any;
     }
     interface CorePageList {
@@ -100,6 +110,18 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLAppSinglePostElement extends Components.AppSinglePost, HTMLStencilElement {
+    }
+    var HTMLAppSinglePostElement: {
+        prototype: HTMLAppSinglePostElement;
+        new (): HTMLAppSinglePostElement;
+    };
+    interface HTMLCoreArchivesElement extends Components.CoreArchives, HTMLStencilElement {
+    }
+    var HTMLCoreArchivesElement: {
+        prototype: HTMLCoreArchivesElement;
+        new (): HTMLCoreArchivesElement;
     };
     interface HTMLCoreAudioElement extends Components.CoreAudio, HTMLStencilElement {
     }
@@ -197,6 +219,12 @@ declare global {
         prototype: HTMLCoreListElement;
         new (): HTMLCoreListElement;
     };
+    interface HTMLCoreMediaTextElement extends Components.CoreMediaText, HTMLStencilElement {
+    }
+    var HTMLCoreMediaTextElement: {
+        prototype: HTMLCoreMediaTextElement;
+        new (): HTMLCoreMediaTextElement;
+    };
     interface HTMLCorePageListElement extends Components.CorePageList, HTMLStencilElement {
     }
     var HTMLCorePageListElement: {
@@ -260,6 +288,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
+        "app-single-post": HTMLAppSinglePostElement;
+        "core-archives": HTMLCoreArchivesElement;
         "core-audio": HTMLCoreAudioElement;
         "core-button": HTMLCoreButtonElement;
         "core-buttons": HTMLCoreButtonsElement;
@@ -276,6 +306,7 @@ declare global {
         "core-image": HTMLCoreImageElement;
         "core-latest-posts": HTMLCoreLatestPostsElement;
         "core-list": HTMLCoreListElement;
+        "core-media-text": HTMLCoreMediaTextElement;
         "core-page-list": HTMLCorePageListElement;
         "core-paragraph": HTMLCoreParagraphElement;
         "core-pullquote": HTMLCorePullquoteElement;
@@ -293,6 +324,12 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface AppSinglePost {
+        "slug"?: string;
+    }
+    interface CoreArchives {
+        "data"?: any;
+    }
     interface CoreAudio {
         "data"?: any;
     }
@@ -300,6 +337,7 @@ declare namespace LocalJSX {
         "data"?: any;
     }
     interface CoreButtons {
+        "data"?: any;
     }
     interface CoreCategories {
         "data"?: any;
@@ -340,6 +378,9 @@ declare namespace LocalJSX {
     interface CoreList {
         "data"?: any;
     }
+    interface CoreMediaText {
+        "data"?: any;
+    }
     interface CorePageList {
         "data"?: any;
     }
@@ -373,6 +414,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
+        "app-single-post": AppSinglePost;
+        "core-archives": CoreArchives;
         "core-audio": CoreAudio;
         "core-button": CoreButton;
         "core-buttons": CoreButtons;
@@ -389,6 +432,7 @@ declare namespace LocalJSX {
         "core-image": CoreImage;
         "core-latest-posts": CoreLatestPosts;
         "core-list": CoreList;
+        "core-media-text": CoreMediaText;
         "core-page-list": CorePageList;
         "core-paragraph": CoreParagraph;
         "core-pullquote": CorePullquote;
@@ -407,6 +451,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-single-post": LocalJSX.AppSinglePost & JSXBase.HTMLAttributes<HTMLAppSinglePostElement>;
+            "core-archives": LocalJSX.CoreArchives & JSXBase.HTMLAttributes<HTMLCoreArchivesElement>;
             "core-audio": LocalJSX.CoreAudio & JSXBase.HTMLAttributes<HTMLCoreAudioElement>;
             "core-button": LocalJSX.CoreButton & JSXBase.HTMLAttributes<HTMLCoreButtonElement>;
             "core-buttons": LocalJSX.CoreButtons & JSXBase.HTMLAttributes<HTMLCoreButtonsElement>;
@@ -423,6 +469,7 @@ declare module "@stencil/core" {
             "core-image": LocalJSX.CoreImage & JSXBase.HTMLAttributes<HTMLCoreImageElement>;
             "core-latest-posts": LocalJSX.CoreLatestPosts & JSXBase.HTMLAttributes<HTMLCoreLatestPostsElement>;
             "core-list": LocalJSX.CoreList & JSXBase.HTMLAttributes<HTMLCoreListElement>;
+            "core-media-text": LocalJSX.CoreMediaText & JSXBase.HTMLAttributes<HTMLCoreMediaTextElement>;
             "core-page-list": LocalJSX.CorePageList & JSXBase.HTMLAttributes<HTMLCorePageListElement>;
             "core-paragraph": LocalJSX.CoreParagraph & JSXBase.HTMLAttributes<HTMLCoreParagraphElement>;
             "core-pullquote": LocalJSX.CorePullquote & JSXBase.HTMLAttributes<HTMLCorePullquoteElement>;
