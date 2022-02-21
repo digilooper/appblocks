@@ -37,7 +37,7 @@ console.log(rsp)
     return [
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>Home</ion-title>
+          <ion-title>AppP Blocks</ion-title>
         </ion-toolbar>
       </ion-header>,
       <ion-content>
