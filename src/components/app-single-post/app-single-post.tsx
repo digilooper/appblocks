@@ -65,7 +65,7 @@ export class AppSinglePost implements ComponentInterface {
             <ion-buttons slot="start">
               <ion-back-button defaultHref="/"></ion-back-button>
             </ion-buttons>
-            <ion-title>{this.post && this.post.title && this.post.title.rendered}</ion-title>
+            <ion-title innerHTML={this.post && this.post.title && this.post.title.rendered}></ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
