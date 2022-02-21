@@ -46,7 +46,7 @@ console.log(rsp)
             <ion-list>
               {
                 this.data && this.data.map( item => (
-                  <ion-item href={item.slug}>{item.title.rendered}</ion-item>
+                  <ion-item href={item.slug} innerHTML={item.title.rendered}></ion-item>
                 ))
               }
             </ion-list>

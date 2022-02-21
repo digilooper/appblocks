@@ -73,6 +73,9 @@ export namespace Components {
     interface CoreParagraph {
         "data": any;
     }
+    interface CorePreformatted {
+        "data": any;
+    }
     interface CorePullquote {
         "data": any;
     }
@@ -237,6 +240,12 @@ declare global {
         prototype: HTMLCoreParagraphElement;
         new (): HTMLCoreParagraphElement;
     };
+    interface HTMLCorePreformattedElement extends Components.CorePreformatted, HTMLStencilElement {
+    }
+    var HTMLCorePreformattedElement: {
+        prototype: HTMLCorePreformattedElement;
+        new (): HTMLCorePreformattedElement;
+    };
     interface HTMLCorePullquoteElement extends Components.CorePullquote, HTMLStencilElement {
     }
     var HTMLCorePullquoteElement: {
@@ -309,6 +318,7 @@ declare global {
         "core-media-text": HTMLCoreMediaTextElement;
         "core-page-list": HTMLCorePageListElement;
         "core-paragraph": HTMLCoreParagraphElement;
+        "core-preformatted": HTMLCorePreformattedElement;
         "core-pullquote": HTMLCorePullquoteElement;
         "core-quote": HTMLCoreQuoteElement;
         "core-separator": HTMLCoreSeparatorElement;
@@ -387,6 +397,9 @@ declare namespace LocalJSX {
     interface CoreParagraph {
         "data"?: any;
     }
+    interface CorePreformatted {
+        "data"?: any;
+    }
     interface CorePullquote {
         "data"?: any;
     }
@@ -435,6 +448,7 @@ declare namespace LocalJSX {
         "core-media-text": CoreMediaText;
         "core-page-list": CorePageList;
         "core-paragraph": CoreParagraph;
+        "core-preformatted": CorePreformatted;
         "core-pullquote": CorePullquote;
         "core-quote": CoreQuote;
         "core-separator": CoreSeparator;
@@ -472,6 +486,7 @@ declare module "@stencil/core" {
             "core-media-text": LocalJSX.CoreMediaText & JSXBase.HTMLAttributes<HTMLCoreMediaTextElement>;
             "core-page-list": LocalJSX.CorePageList & JSXBase.HTMLAttributes<HTMLCorePageListElement>;
             "core-paragraph": LocalJSX.CoreParagraph & JSXBase.HTMLAttributes<HTMLCoreParagraphElement>;
+            "core-preformatted": LocalJSX.CorePreformatted & JSXBase.HTMLAttributes<HTMLCorePreformattedElement>;
             "core-pullquote": LocalJSX.CorePullquote & JSXBase.HTMLAttributes<HTMLCorePullquoteElement>;
             "core-quote": LocalJSX.CoreQuote & JSXBase.HTMLAttributes<HTMLCoreQuoteElement>;
             "core-separator": LocalJSX.CoreSeparator & JSXBase.HTMLAttributes<HTMLCoreSeparatorElement>;
