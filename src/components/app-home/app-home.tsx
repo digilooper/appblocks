@@ -25,12 +25,23 @@ export class AppHome implements ComponentInterface {
     try {
       const response = await fetch(request);
       const rsp = await response.json();
-console.log(rsp)
+      console.log(rsp)
       this.data = [...rsp];
+      this.processEditorStyles(this.data[0].appp_settings);
       state.posts = this.data;
     }catch (error) {
       console.log(error);
     }
+  }
+
+  processEditorStyles(data) {
+    state.colors = [...data.color.palette.default, ...data.color.palette.theme];
+
+
+    const sizes = [...data.typography.fontSizes.default, ...data.typography.fontSizes.theme]
+    state.fonts = {...{sizes: sizes}}
+
+    console.log(state.fonts);
   }
 
   render() {

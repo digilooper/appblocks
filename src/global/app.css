@@ -21,6 +21,10 @@
 @import '~@ionic/core/css/text-transformation.css';
 @import '~@ionic/core/css/flex-utils.css';
 
+@import '~@wordpress/block-library/build-style/common.css';
+@import '~@wordpress/block-library/build-style/style.css';
+@import '~@wordpress/block-library/build-style/theme.css';
+
 /*
   The CSS Variables below can be used to theme your app.
   For more info on CSS variables check out:

@@ -1,7 +1,3 @@
-@import '~@wordpress/block-library/build-style/common.css';
-@import '~@wordpress/block-library/build-style/style.css';
-@import '~@wordpress/block-library/build-style/theme.css';
-
 .wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax {
     background-attachment: inherit;
 }
