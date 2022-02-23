@@ -57,6 +57,11 @@ export class AppHome implements ComponentInterface {
           color: ${color.color};
         }
       `;
+      style.innerHTML += `
+        .has-${color.slug}-background-color {
+          background-color: ${color.color};
+        }
+    `;
 
     });
 
