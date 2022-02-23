@@ -12,6 +12,7 @@ export class CoreGallery implements ComponentInterface {
 
   @State() isOpen = false;
   image: string;
+  caption: string;
 
   componentWillLoad(): void | Promise<void> {
       console.log(this.data);
@@ -28,13 +29,15 @@ export class CoreGallery implements ComponentInterface {
 
       const domParser = new DOMParser();
       const doc = domParser.parseFromString(item.innerHTML, "text/html");
-      const img = doc.querySelector('img');  
+      const img = doc.querySelector('img');
+      const caption = doc.querySelector('figcaption');  
       const slide = document.createElement('div');
 
       slide.setAttribute('style', `background-image: url(${img.src}); background-size: cover; background-position: center;`);
       slide.setAttribute('class', 'app-slide');
       slide.onclick = () => {
         this.image = img.src;
+        if ( caption ) this.caption = caption.innerHTML;
         this.isOpen = true;
       };
       
@@ -58,8 +61,9 @@ export class CoreGallery implements ComponentInterface {
             </ion-toolbar>
           </ion-header>
           <ion-content color="dark">
-            <div style={{'display': 'flex', 'align-items': 'center', 'width': '100%', 'height': '100%'}}>
+            <div style={{'display': 'flex', 'flex-direction': 'column', 'justify-content': 'center', 'align-items': 'center', 'width': '100%', 'height': '100%'}}>
               <img src={this.image}></img>
+              <figcaption style={{'font-size': '0.8em', 'padding': '4px 0'}}>{this.caption}</figcaption>
             </div>
           </ion-content>
         </ion-modal>
