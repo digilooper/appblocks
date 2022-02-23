@@ -1,4 +1,4 @@
-import { Component, Host, h, ComponentInterface, Prop, Element } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop, Element, State } from '@stencil/core';
 
 @Component({
   tag: 'core-gallery',
@@ -9,8 +9,13 @@ export class CoreGallery implements ComponentInterface {
   @Element() el: HTMLElement;
   @Prop() data: any;
 
+
+  @State() isOpen = false;
+  image: string;
+
   componentWillLoad(): void | Promise<void> {
       console.log(this.data);
+      this.processHTML();
   }
 
   processHTML() {
@@ -28,6 +33,10 @@ export class CoreGallery implements ComponentInterface {
 
       slide.setAttribute('style', `background-image: url(${img.src}); background-size: cover; background-position: center;`);
       slide.setAttribute('class', 'app-slide');
+      slide.onclick = () => {
+        this.image = img.src;
+        this.isOpen = true;
+      };
       
       div.appendChild(slide);
     })
@@ -39,7 +48,21 @@ export class CoreGallery implements ComponentInterface {
   render() {
     return (
       <Host>
-        {this.processHTML()}
+        <ion-modal isOpen={this.isOpen}>
+          <ion-header>
+            <ion-toolbar color="dark">
+              <ion-buttons>
+                <ion-button onclick={()=> this.isOpen = false}><ion-icon name="close"></ion-icon></ion-button>
+              </ion-buttons>
+              <ion-title></ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content color="dark">
+            <div style={{'display': 'flex', 'align-items': 'center', 'width': '100%', 'height': '100%'}}>
+              <img src={this.image}></img>
+            </div>
+          </ion-content>
+        </ion-modal>
       </Host>
     );
   }

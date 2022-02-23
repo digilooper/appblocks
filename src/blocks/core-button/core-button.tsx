@@ -11,6 +11,7 @@ export class CoreButton {
 
   componentWillLoad(): void | Promise<void> {
       console.log(this.data);
+      this.processHTML();
   }
 
   processHTML() {
@@ -34,7 +35,6 @@ export class CoreButton {
   render() {
     return (
       <Host class="ion-padding">
-        {this.processHTML()}
       </Host>
     );
   }
