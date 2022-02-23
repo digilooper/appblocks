@@ -62,7 +62,7 @@ export class CoreGallery implements ComponentInterface {
           </ion-header>
           <ion-content color="dark">
             <div style={{'display': 'flex', 'flex-direction': 'column', 'justify-content': 'center', 'align-items': 'center', 'width': '100%', 'height': '100%'}}>
-              <img src={this.image}></img>
+              <img style={{'max-height': '90%'}} src={this.image}></img>
               <figcaption style={{'font-size': '0.8em', 'padding': '4px 0'}}>{this.caption}</figcaption>
             </div>
           </ion-content>
