@@ -11,18 +11,18 @@ export class CoreHeading implements ComponentInterface {
  
   componentWillLoad(): void | Promise<void> {
     console.log(this.data);
+    this.processHTML()
+  }
 
+  processHTML() {
     const domParser = new DOMParser();
     const doc = domParser.parseFromString(this.data.innerHTML, "text/html");
-    const h2 = doc.querySelector('h2');
+    const body = doc.querySelector('body');
 
-    h2.removeAttribute('class');
-    //h2.removeAttribute('id');
- 
-    this.el.appendChild(h2);
+    this.el.appendChild(body.childNodes[0]);
 
     console.log(this.el);
-}
+  }
 
   render() {
     return (

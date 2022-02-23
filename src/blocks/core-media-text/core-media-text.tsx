@@ -11,6 +11,7 @@ export class CoreMediaText {
 
   componentWillLoad(): void | Promise<void> {
       console.log(this.data);
+      this.processHTML();
   }
 
   processHTML() {
@@ -36,7 +37,6 @@ export class CoreMediaText {
   render() {
     return (
       <Host>
-        { this.processHTML() }
       </Host>
     );
   }

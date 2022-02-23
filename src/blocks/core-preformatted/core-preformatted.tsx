@@ -3,7 +3,6 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'core-preformatted',
   styleUrl: 'core-preformatted.css',
-  shadow: true,
 })
 export class CorePreformatted {
 
@@ -15,8 +14,7 @@ export class CorePreformatted {
 
   render() {
     return (
-      <Host class="ion-padding-start ion-padding-end" innerHTML={ this.data.innerHTML }>
-        <slot />
+      <Host class="ion-padding" innerHTML={ this.data.innerHTML }>
       </Host>
     );
   }

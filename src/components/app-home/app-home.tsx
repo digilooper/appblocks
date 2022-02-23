@@ -39,9 +39,38 @@ export class AppHome implements ComponentInterface {
 
 
     const sizes = [...data.typography.fontSizes.default, ...data.typography.fontSizes.theme]
-    state.fonts = {...{sizes: sizes}}
+    state.fonts = {
+      sizes: sizes
+    }
 
+    console.log(state.colors);
     console.log(state.fonts);
+
+    const style = document.createElement('style');
+
+    style.innerHTML = '';
+
+    state.colors.map( color => {
+
+      style.innerHTML += `
+        .has-${color.slug}-color {
+          color: ${color.color};
+        }
+      `;
+
+    });
+
+    (state.fonts as any).sizes.map( font => {
+
+      style.innerHTML += `
+        .has-${font.slug}-font-size {
+          font-size: ${font.size};
+        }
+      `;
+
+    });
+
+    document.head.appendChild(style);
   }
 
   render() {
